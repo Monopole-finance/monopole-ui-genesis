@@ -20,7 +20,7 @@ function Home() {
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
 
-  let deadline = new Date("Jan 17, 2022 00:00:00").getTime();
+  let deadline = new Date("Jan 20, 2022 00:00:00").getTime();
 
   function count() {
     var now = new Date().getTime();
