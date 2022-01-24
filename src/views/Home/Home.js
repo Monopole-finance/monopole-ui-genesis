@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // Chakra imports
 import { Box, Grid, Flex, Text, Image } from "@chakra-ui/react";
 import { MonopoleIconText } from "../../components/Icons/Icons";
