@@ -15,46 +15,6 @@ import serieux from "../../assets/img/partners/serieux.png";
 import specto from "../../assets/img/partners/specto.png";
 
 function Home() {
-  const [days, setDays] = useState();
-  const [hours, setHours] = useState();
-  const [minutes, setMinutes] = useState();
-  const [seconds, setSeconds] = useState();
-
-  let deadline = new Date("Jan 24, 2022 12:00:00").getTime();
-
-  function count() {
-    var now = new Date().getTime();
-    var t = deadline - now;
-    var dd = Math.floor(t / (1000 * 60 * 60 * 24));
-    var hh = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var mm = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-    var ss = Math.floor((t % (1000 * 60)) / 1000);
-
-    var days = dd < 10 ? "0" + dd : dd;
-    var hours = hh < 10 ? "0" + hh : hh;
-    var minutes = mm < 10 ? "0" + mm : mm;
-    var seconds = ss < 10 ? "0" + ss : ss;
-
-    if (t > 0) {
-      setDays(days);
-      setHours(minutes);
-      setMinutes(hours);
-      setSeconds(seconds);
-    } else {
-      setDays(0);
-      setHours(0);
-      setMinutes(0);
-      setSeconds(0);
-    }
-  }
-
-  useEffect(() => {
-    count();
-    setInterval(() => {
-      count();
-    }, 1000);
-  });
-
   return (
     <Flex
       height="100%"
@@ -77,141 +37,16 @@ function Home() {
         >
           The pre-sale is coming soon !
         </Text>
-        <Grid
+        <Text
+          lineHeight="48px"
+          fontSize="40px"
+          fontWeight="700"
+          fontFamily="Montserrat"
           mt="30px"
           mb="45px"
-          templateColumns="1fr 1fr 1fr 1fr"
-          gap={{ sm: "10px", md: "20px", lg: "40px" }}
         >
-          <Flex
-            flexDirection="column"
-            justifyContent="center"
-            textAlign="center"
-            alignItems="center"
-          >
-            <Box
-              width="96.98px"
-              height="96.98px"
-              background="white"
-              borderRadius="16px"
-            >
-              <Text
-                lineHeight="42px"
-                fontSize="42px"
-                fontWeight="700"
-                fontFamily="Montserrat"
-                mt="28px"
-                color="#000126"
-              >
-                {days}
-              </Text>
-            </Box>
-            <Text
-              lineHeight="18.23px"
-              fontSize="14px"
-              fontWeight="400"
-              mt="10px"
-            >
-              days
-            </Text>
-          </Flex>
-          <Flex
-            flexDirection="column"
-            justifyContent="center"
-            textAlign="center"
-            alignItems="center"
-          >
-            <Box
-              width="96.98px"
-              height="96.98px"
-              background="white"
-              borderRadius="16px"
-            >
-              <Text
-                lineHeight="42px"
-                fontSize="42px"
-                fontWeight="700"
-                fontFamily="Montserrat"
-                mt="28px"
-                color="#000126"
-              >
-                {hours}
-              </Text>
-            </Box>
-            <Text
-              lineHeight="18.23px"
-              fontSize="14px"
-              fontWeight="400"
-              mt="10px"
-            >
-              hours
-            </Text>
-          </Flex>
-          <Flex
-            flexDirection="column"
-            justifyContent="center"
-            textAlign="center"
-            alignItems="center"
-          >
-            <Box
-              width="96.98px"
-              height="96.98px"
-              background="white"
-              borderRadius="16px"
-            >
-              <Text
-                lineHeight="42px"
-                fontSize="42px"
-                fontWeight="700"
-                fontFamily="Montserrat"
-                mt="28px"
-                color="#000126"
-              >
-                {minutes}
-              </Text>
-            </Box>
-            <Text
-              lineHeight="18.23px"
-              fontSize="14px"
-              fontWeight="400"
-              mt="10px"
-            >
-              minutes
-            </Text>
-          </Flex>
-          <Flex
-            flexDirection="column"
-            justifyContent="center"
-            textAlign="center"
-            alignItems="center"
-          >
-            <Box
-              width="96.98px"
-              height="96.98px"
-              background="white"
-              borderRadius="16px"
-            >
-              <Text
-                lineHeight="42px"
-                fontSize="42px"
-                fontWeight="700"
-                fontFamily="Montserrat"
-                mt="28px"
-                color="#000126"
-              >
-                {seconds}
-              </Text>
-            </Box>
-            <Text
-              lineHeight="18.23px"
-              fontSize="14px"
-              fontWeight="400"
-              mt="10px"
-            >
-              seconds
-            </Text>
-          </Flex>
-        </Grid>
+          Website is coming in the next few hours 
+        </Text>
         <Text
           lineHeight="25px"
           fontSize="21px"
