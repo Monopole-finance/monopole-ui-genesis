@@ -8,8 +8,6 @@ import background from "../../assets/img/background.png";
 function Home() {
   return (
     <Flex
-      height="100%"
-      width="100%"
       flexDirection="column"
       justifyContent="center"
       textAlign="center"
