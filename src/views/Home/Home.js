@@ -34,14 +34,6 @@ function Home() {
           fontSize="40px"
           fontWeight="700"
           fontFamily="Montserrat"
-        >
-          The pre-sale is coming soon !
-        </Text>
-        <Text
-          lineHeight="48px"
-          fontSize="40px"
-          fontWeight="700"
-          fontFamily="Montserrat"
           mt="30px"
           mb="45px"
         >
@@ -63,33 +55,6 @@ function Home() {
         </Text>
         <SubscribeForm />
       </Box>
-      <Flex
-        mt="74px"
-        flexDirection="column"
-        justifyContent="center"
-        textAlign="center"
-        alignItems="center"
-        background="#0C0E47"
-        h="108px"
-        w="100%"
-      >
-        <Grid
-          templateColumns="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
-          justifyContent="center"
-          alignItems="center"
-          w="100%"
-          px="3%"
-        >
-          <Image src={vecino} alt="Vecino" />
-          <Image src={automotive} alt="Advanced Automotive" />
-          <Image src={cuatrimoteando} alt="Cuatrimoteando" />
-          <Image src={immorentier} alt="Immorentier" />
-          <Image src={raduga} alt="Raduga Film LLC" />
-          <Image src={sayada} alt="Sayada" />
-          <Image src={serieux} alt="Sérieux" />
-          <Image src={specto} alt="Specto Media" />
-        </Grid>
-      </Flex>
     </Flex>
   );
 }
