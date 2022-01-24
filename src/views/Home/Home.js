@@ -12,9 +12,9 @@ function Home() {
       justifyContent="center"
       textAlign="center"
       alignItems="center"
-      bgRepeat="no-repeat"
-      bgImage={background}
-      bgSize="cover"
+      backgroundImage={background}
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
     >
       <MonopoleIconText mt="50px" height="35px" width="250px" />
       <Box mt="60px" background="transaprent" height="75%" px="10%">
