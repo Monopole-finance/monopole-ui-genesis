@@ -1,18 +1,9 @@
 import React from "react";
 // Chakra imports
-import { Box, Grid, Flex, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { MonopoleIconText } from "../../components/Icons/Icons";
 import SubscribeForm from "../../components/SubscribeForm/SubscribeForm";
 import background from "../../assets/img/background.png";
-
-import vecino from "../../assets/img/partners/vecino.png";
-import automotive from "../../assets/img/partners/automotive.png";
-import cuatrimoteando from "../../assets/img/partners/cuatrimoteando.png";
-import immorentier from "../../assets/img/partners/immorentier.png";
-import raduga from "../../assets/img/partners/raduga.png";
-import sayada from "../../assets/img/partners/sayada.png";
-import serieux from "../../assets/img/partners/serieux.png";
-import specto from "../../assets/img/partners/specto.png";
 
 function Home() {
   return (
