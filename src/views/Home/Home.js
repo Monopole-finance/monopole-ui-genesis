@@ -15,6 +15,9 @@ function Home() {
       backgroundImage={background}
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
+      backgroundSize="cover"
+      width="100%"
+      height="100%"
     >
       <MonopoleIconText mt="50px" height="35px" width="250px" />
       <Box mt="60px" background="transaprent" height="75%" px="10%">
