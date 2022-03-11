@@ -3,22 +3,16 @@ import React, { useState, useEffect } from "react";
 import { Box, Grid, Flex, Text, Image } from "@chakra-ui/react";
 import { MonopoleIconText } from "../../components/Icons/Icons";
 import SubscribeForm from "../../components/SubscribeForm/SubscribeForm";
+import { Partners } from "../../components/Partners/Partners";
 import background from "../../assets/img/background.png";
-
-import vecino from "../../assets/img/partners/vecino.png";
-import automotive from "../../assets/img/partners/automotive.png";
-import cuatrimoteando from "../../assets/img/partners/cuatrimoteando.png";
-import immorentier from "../../assets/img/partners/immorentier.png";
-import raduga from "../../assets/img/partners/raduga.png";
-import sayada from "../../assets/img/partners/sayada.png";
-import serieux from "../../assets/img/partners/serieux.png";
-import specto from "../../assets/img/partners/specto.png";
+import { kMaxLength } from "buffer";
 
 function Home() {
   const [days, setDays] = useState();
   const [hours, setHours] = useState();
   const [minutes, setMinutes] = useState();
   const [seconds, setSeconds] = useState();
+  const [index, setIndex] = useState(0);
 
   let deadline = new Date("Jan 24, 2022 12:00:00").getTime();
 
@@ -54,6 +48,22 @@ function Home() {
       count();
     }, 1000);
   });
+
+  useEffect(() => {
+    const lastIndex = Object.keys(Partners).length - 1;
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
 
   return (
     <Flex
@@ -237,22 +247,90 @@ function Home() {
         background="#0C0E47"
         h="108px"
         w="100%"
+        style={{ position: "relative", overflow: "hidden" }}
       >
         <Grid
-          templateColumns="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr"
+          templateColumns="1fr"
           justifyContent="center"
           alignItems="center"
           w="100%"
           px="3%"
         >
-          <Image src={vecino} alt="Vecino" />
-          <Image src={automotive} alt="Advanced Automotive" />
-          <Image src={cuatrimoteando} alt="Cuatrimoteando" />
-          <Image src={immorentier} alt="Immorentier" />
-          <Image src={raduga} alt="Raduga Film LLC" />
-          <Image src={sayada} alt="Sayada" />
-          <Image src={serieux} alt="Sérieux" />
-          <Image src={specto} alt="Specto Media" />
+          {Object.keys(Partners).map((id, partnersIndex) => {
+            let position = "position-9";
+            let partnersLength = Object.keys(Partners).length;
+            if (partnersIndex === index) {
+              position = "position-1";
+            }
+            if (
+              partnersIndex === index + 1 ||
+              index - partnersIndex == partnersLength - 1
+            ) {
+              position = "position-2";
+            }
+
+            if (
+              partnersIndex === index + 2 ||
+              index - partnersIndex == partnersLength - 2
+            ) {
+              position = "position-3";
+            }
+
+            if (
+              partnersIndex === index + 3 ||
+              index - partnersIndex == partnersLength - 3
+            ) {
+              position = "position-4";
+            }
+
+            if (
+              partnersIndex === index + 4 ||
+              index - partnersIndex == partnersLength - 4
+            ) {
+              position = "position-5";
+            }
+
+            if (
+              partnersIndex === index + 5 ||
+              index - partnersIndex == partnersLength - 5
+            ) {
+              position = "position-6";
+            }
+
+            if (
+              partnersIndex === index + 6 ||
+              index - partnersIndex == partnersLength - 6
+            ) {
+              position = "position-7";
+            }
+
+            if (
+              partnersIndex === index + 7 ||
+              index - partnersIndex == partnersLength - 7
+            ) {
+              position = "position-8";
+            }
+
+            if (
+              partnersIndex === index - 1 ||
+              (index === 0 && partnersIndex === partnersLength - 1)
+            ) {
+              position = "position-0";
+            }
+
+            return (
+              <Box
+                className={`partners_container ${position}`}
+                width={{ sm: "100%", md: "25%", lg: "17%" }}
+              >
+                <Image
+                  style={{ margin: "auto" }}
+                  src={Partners[id].img}
+                  alt={Partners[id].name}
+                />
+              </Box>
+            );
+          })}
         </Grid>
       </Flex>
     </Flex>
